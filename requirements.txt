@@ -1,0 +1,6 @@
+requests
+pandas
+PyQt6
+pyinstaller
+aiofiles
+aiohttp
