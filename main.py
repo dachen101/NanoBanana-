@@ -402,9 +402,10 @@ class AsyncWorker:
                                     raise ValueError(error_msg)
                             
                             # 如果没有base64格式，尝试传统的图片URL格式
-                            image_url_match = re.search(r'\[点击下载\]\((.*?)\)', content)
+                            # 支持多种格式：![image](URL)、![图片](URL)、[点击下载](URL)
+                            image_url_match = re.search(r'!\[.*?\]\((.*?)\)', content)
                             if not image_url_match:
-                                image_url_match = re.search(r'!\[图片\]\((.*?)\)', content)
+                                image_url_match = re.search(r'\[点击下载\]\((.*?)\)', content)
                             
                             if image_url_match:
                                 image_url = image_url_match.group(1)
