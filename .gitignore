@@ -51,5 +51,5 @@ config.json
 images/*
 !images/.gitkeep
 
-# Windows批处理文件（可选，如果不想分享）
-*.bat
+# Windows批处理文件（保留启动脚本）
+# *.bat
